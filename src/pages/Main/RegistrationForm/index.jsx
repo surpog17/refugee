@@ -1,74 +1,54 @@
-// src/components/RegisterForm.js
-
-import React from "react";
-
-const index = () => {
+import { NavLink } from "react-router-dom";
+import host from "./../../../images/hostpng.png";
+import refugee from "./../../../images/refugee.png";
+import volunteer from "./../../../images/volunteer.png";
+export default function index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-500">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <div className="flex justify-center mb-4">
-          <img src="/path-to-your-logo.png" alt="Logo" className="h-8 w-8" />
+    <div className="min-h-screen bg-blue-500 flex flex-col items-center justify-center text-white font-Poppins">
+      <h1 className="text-2xl font-bold mb-8">Join As</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-zinc-400 p-6 rounded-lg text-center shadow-xl">
+          <img
+            src={refugee}
+            alt="IDP Icon"
+            className="mx-auto mb-4 w-32 h-32"
+          />
+          <h2 className="text-xl font-bold mb-2">IDP</h2>
+          <p className="mb-4">description about IDP situation</p>
+          <NavLink
+            to="/ipdSignup"
+            className="bg-yellow-500 text-zinc-800 px-4 py-2 rounded"
+          >
+            Sign Up
+          </NavLink>
         </div>
-        <h2 className="text-2xl font-bold text-center mb-4">
-          Create an Account
-        </h2>
-        <form>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="First Name"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              placeholder="Repeat Password"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="mb-4">
-            <button
-              type="submit"
-              className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-            >
-              Register Account
-            </button>
-          </div>
-          <div className="text-center">
-            <button
-              type="button"
-              className="text-blue-500 hover:underline"
-              onClick={() => alert("Redirect to login")}
-            >
-              Login
-            </button>
-          </div>
-        </form>
+        <div className="bg-zinc-500 p-6 rounded-lg text-center">
+          <img src={host} alt="Host Icon" className="mx-auto mb-4 w-32 h-32" />
+          <h2 className="text-xl font-bold mb-2">Host</h2>
+          <p className="mb-4">Description about host</p>
+          <NavLink
+            to="/hostSignup"
+            className="bg-yellow-500 text-zinc-800 px-4 py-2 rounded"
+          >
+            Sign Up
+          </NavLink>
+        </div>
+        <div className="bg-zinc-600 p-6 rounded-lg text-center">
+          <img
+            src={volunteer}
+            alt="Volunteer Icon"
+            className="mx-auto mb-4 w-32 h-32"
+          />
+          <h2 className="text-xl font-bold mb-2">Volunteer</h2>
+          <p className="mb-4">description about volunteer</p>
+          <NavLink
+            to="/volunteerSignup"
+            className="bg-yellow-500 text-zinc-800 px-4 py-2 rounded"
+          >
+            Sign Up
+          </NavLink>
+        </div>
       </div>
     </div>
   );
-};
-
-export default index;
+}

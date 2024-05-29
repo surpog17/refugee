@@ -17,6 +17,9 @@ import Refugee from "./User/Refugee";
 import RegisterHost from "./User/RegisterHost";
 import RegisterNGOs from "./User/RegisterNGOs";
 import RegisterRefugee from "./User/RegisterRefugee";
+import IDPSignUp from "./RegistrationForm/IDPSignUp";
+import HostSignUp from "./RegistrationForm/HostSignUp";
+import VolunteerSignUp from "./RegistrationForm/VolunteerSignUp";
 export default function index({ token }) {
   // const [NotFoundPage, setNotFound] = useState(location?.pathname == "/404");
   // useEffect(() => {
@@ -102,6 +105,9 @@ export default function index({ token }) {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegistrationForm />} />
+          <Route path="/ipdSignup" element={<IDPSignUp />} />
+          <Route path="/hostSignup" element={<HostSignUp />} />
+          <Route path="/volunteerSignup" element={<VolunteerSignUp />} />
         </Routes>
       </BrowserRouter>
     </div>

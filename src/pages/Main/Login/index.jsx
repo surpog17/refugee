@@ -1,15 +1,11 @@
 import React from "react";
-
+import refugee from "./../../../images/erhms.png";
 const index = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-500">
+    <div className="flex items-center justify-center min-h-screen bg-blue-500 text-sm">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded shadow-md">
         <div className="text-center">
-          <img
-            src="https://img.icons8.com/ios-filled/50/000000/home.png"
-            alt="Home Icon"
-            className="mx-auto"
-          />
+          <img src={refugee} alt="Home Icon" className="mx-auto w-32" />
           <h2 className="mt-6 text-3xl font-bold text-gray-900">Login</h2>
           <p className="mt-2 text-sm text-gray-600">Sign in to your account</p>
         </div>

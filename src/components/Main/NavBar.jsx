@@ -2,12 +2,25 @@ import React from "react";
 import { FaBell, FaEnvelope, FaHome } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ userType, user }) => {
   return (
     <nav className="fixed bg-white w-full p-4 shadow-md flex justify-between items-center">
       <div className="flex items-center space-x-2">
         <FaHome className="text-blue-800" size={24} />
-        <span className="text-lg font-bold text-blue-800">ERHMS</span>
+        <span className="text-lg font-bold text-blue-800">ERHMS </span>
+        <span className="text-lg font-bold text-blue-800 ">
+          (
+          {userType == "NDRMC Admin"
+            ? "Admin"
+            : userType == "ipd"
+            ? "IPD"
+            : userType == "ngo"
+            ? "NGOs"
+            : userType == "volunteer"
+            ? "Volunteer"
+            : userType}
+          )
+        </span>
       </div>
       <div className="flex items-center space-x-4">
         <input
@@ -32,7 +45,9 @@ const Navbar = () => {
               alt="Profile"
               className="w-8 h-8 rounded-full"
             />
-            <span className="font-semibold">Abebe Kebede</span>
+            <span className="font-semibold">
+              {user?.actor_profile?.username}{" "}
+            </span>
           </NavLink>
         </div>
       </div>

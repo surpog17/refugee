@@ -7,7 +7,7 @@ const FeedPost = () => {
         <div className="bg-white p-4 rounded-lg shadow-md">
           <div className="flex items-center space-x-4">
             <img
-              src={
+              src={ 
                 "https://htmlstream.com/preview/unify-v2.6/assets/img-temp/400x450/img5.jpg"
               }
               alt="User"

@@ -5,7 +5,7 @@ import { allApi } from "../../../api/endPoint";
 import { toast } from "react-toast";
 import NoRecordsFound from "../../../components/Main/NoRecorde";
 
-export default function Host() {
+export default function Camps() {
   const [user, setUser] = useState("IDP");
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ export default function Host() {
     const fetchData = async () => {
       try {
         const response = await allApi.get(
-          `/app/search-users/?phone_number=&first_name&last_name&email&user_type=Host`
+          `/app/search-users/?phone_number=&first_name&last_name&email&user_type=Camp Admin`
         );
         console.log(response?.data, "***");
         setData(response?.data);

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Admin, Ipd, NGOs, volunteer } from "./Meun";
+import { Admin, CampAdmin, Ipd, NGOs, volunteer } from "./Meun";
 import { FaSignOutAlt } from "react-icons/fa";
 const Sidebar = ({ userType }) => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Sidebar = ({ userType }) => {
       : userType == "Volunteer"
       ? volunteer
       : userType == "Camp Admin"
-      ? Ipd
+      ? CampAdmin
       : [];
   console.log(menu, "hahah");
   const HandleLogOut = () => {

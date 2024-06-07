@@ -1,6 +1,8 @@
 import { FaHome, FaUsers, FaBlog, FaCogs, FaSignOutAlt } from "react-icons/fa";
 import { LiaCampgroundSolid, LiaDonateSolid } from "react-icons/lia";
 import { MdDynamicFeed } from "react-icons/md";
+import { GrCompliance } from "react-icons/gr";
+import { HiOutlineDocumentReport } from "react-icons/hi";
 
 export const Admin = [
   {
@@ -9,8 +11,8 @@ export const Admin = [
     icon: <FaUsers />,
     subMenu: [
       {
-        to: "/IDP",
-        text: "IDP",
+        to: "/idp",
+        text: "IDPs",
       },
       {
         to: "/camps",
@@ -18,10 +20,10 @@ export const Admin = [
       },
       {
         to: "/hosts",
-        text: "Host",
+        text: "Hosts",
       },
       {
-        to: "/NGOs",
+        to: "/ngos",
         text: "NGOs",
       },
     ],
@@ -47,6 +49,38 @@ export const Ipd = [
     to: "/users",
     text: "IDP Users",
     icon: <FaUsers />,
+  },
+  {
+    to: "/users",
+    text: "IDP Users",
+    icon: <FaUsers />,
+  },
+  {
+    to: "/settings",
+    text: "Settings",
+    icon: <FaCogs />,
+  },
+];
+export const CampAdmin = [
+  {
+    to: "/",
+    text: "Home",
+    icon: <FaHome />,
+  },
+  {
+    to: "/idp",
+    text: "IDP Users",
+    icon: <FaUsers />,
+  },
+  {
+    to: "/complain",
+    text: "Complain",
+    icon: <GrCompliance />,
+  },
+  {
+    to: "/report",
+    text: "Report",
+    icon: <HiOutlineDocumentReport />,
   },
   {
     to: "/settings",

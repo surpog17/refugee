@@ -4,9 +4,10 @@ import { NavLink } from "react-router-dom";
 import { allApi } from "../../../api/endPoint";
 import NoRecordsFound from "../../../components/Main/NoRecorde";
 import { toast } from "react-toast";
+import Loading from "../../../components/Main/Loading";
 
 export default function Ngos() {
-  const [user, setUser] = useState("IDP");
+  const [user, setUser] = useState("ngos");
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
@@ -41,30 +42,36 @@ export default function Ngos() {
     }
   };
   return (
-    <div className="mt-10">
-      {/* <NavLink
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="mt-10">
+          {/* <NavLink
         to="/registerrefugee"
         className="px-4 py-2 bg-blue-500  text-white rounded-lg mt-10 ml-12"
       >
         Create Refugee
       </NavLink> */}
-      {filterUsers?.length != 0 ? (
-        <div className="grid  grid-cols-1 md:grid-cols-4 mb-5 gap-4">
-          {filterUsers?.map((items) => (
-            <CardLayout
-              firstname={items?.first_name}
-              lastname={items?.last_name}
-              image={items?.profile_image}
-              location={items?.actor_profile?.location}
-              to={`${user}/${items?.id}`}
-              action={() => handleSubmit(items?.id, items?.is_active)}
-              isActive={items?.is_active}
-            />
-          ))}
+          {filterUsers?.length != 0 ? (
+            <div className="grid  grid-cols-1 md:grid-cols-4 mb-5 gap-4">
+              {filterUsers?.map((items) => (
+                <CardLayout
+                  firstname={items?.first_name}
+                  lastname={items?.last_name}
+                  image={items?.profile_image}
+                  location={items?.actor_profile?.location}
+                  to={`/${user}/${items?.id}`}
+                  action={() => handleSubmit(items?.id, items?.is_active)}
+                  isActive={items?.is_active}
+                />
+              ))}
+            </div>
+          ) : (
+            <NoRecordsFound />
+          )}
         </div>
-      ) : (
-        <NoRecordsFound />
       )}
-    </div>
+    </>
   );
 }

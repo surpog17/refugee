@@ -13,8 +13,9 @@ export const allApi = axios.create({
     Authorization: `Bearer ${getToken()}`,
   },
 });
+
 export const allApiNotAuth = axios.create({
   baseURL: "https://idphcs.blackneb.com",
 });
 
-export const IMG_URL = "https://idphcs.blackneb.com";
+export const Image_url = "https://idphcs.blackneb.com/media/";

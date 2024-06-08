@@ -35,7 +35,12 @@ export default function index() {
             className="mx-auto mb-4 w-32 h-32"
           />
           <h2 className="text-xl font-bold mb-2">IDP</h2>
-          <p className="mb-4 text-xs">description about IDP situation</p>
+          <p className="mb-4 text-xs">
+            Internally displaced people are those who flee their homes due to
+            conflict, disasters, or violence, but remain within their country's
+            borders, facing significant challenges and limited access to
+            resources.
+          </p>
           <NavLink
             to="idps"
             className="bg-yellow-500 text-white px-4 py-2 rounded"

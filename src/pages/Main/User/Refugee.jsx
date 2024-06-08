@@ -5,10 +5,19 @@ import { allApi } from "../../../api/endPoint";
 import { toast } from "react-toast";
 import NoRecordsFound from "../../../components/Main/NoRecorde";
 import Loading from "../../../components/Main/Loading";
+import DonationForm from "../RegistrationForm/Modal/DonationForm";
 
-export default function Refugee() {
+export default function Refugee({ userType }) {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
+  const [create, setCreate] = useState(false);
+  const [provided_to, setProvidedTo] = useState(null);
+  const ShowDonation = (items) => {
+    setCreate(!create);
+    setProvidedTo(items?.id);
+  };
+  console.log(provided_to, "provided_to");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,9 +67,11 @@ export default function Refugee() {
                   lastname={items?.last_name}
                   image={items?.profile_image}
                   location={items?.actor_profile?.location}
-                  to={`/idp/${items?.id}`}
+                  to={`/idps/${items?.id}`}
                   action={() => handleSubmit(items?.id, items?.is_active)}
+                  donationAction={() => ShowDonation(items)}
                   isActive={items?.is_active}
+                  userType={userType}
                 />
               ))}
             </div>
@@ -68,6 +79,9 @@ export default function Refugee() {
             <NoRecordsFound />
           )}
         </div>
+      )}
+      {create && (
+        <DonationForm HandleCancel={ShowDonation} provided_to={provided_to} />
       )}
     </>
   );

@@ -35,43 +35,43 @@ const UserDetail = ({ user }) => {
           </p>
           <hr className="my-4" />
           <h3 className="text-xl font-bold mb-2">Profile Information</h3>
-          <p className="text-gray-600">Age: {user?.profile.age}</p>
-          <p className="text-gray-600">Gender: {user?.profile.gender}</p>
+          <p className="text-gray-600">Age: {user?.profile?.age}</p>
+          <p className="text-gray-600">Gender: {user?.profile?.gender}</p>
           <p className="text-gray-600">
-            Education Level: {user?.profile.education_level}
+            Education Level: {user?.profile?.education_level}
           </p>
           <p className="text-gray-600">
-            Language Spoken: {user?.profile.language_spoken}
+            Language Spoken: {user?.profile?.language_spoken}
           </p>
           <p className="text-gray-600">
-            Place of Origin: {user?.profile.place_of_origin}
+            Place of Origin: {user?.profile?.place_of_origin}
           </p>
           <p className="text-gray-600">
             Previous Assistance Received:{" "}
-            {user?.profile.previous_assistance_received}
+            {user?.profile?.previous_assistance_received}
           </p>
           <hr className="my-4" />
           <h3 className="text-xl font-bold mb-2">Economic Information</h3>
           <p className="text-gray-600">
-            Economic Status: {user?.profile.economic_status}
+            Economic Status: {user?.profile?.economic_status}
           </p>
           <p className="text-gray-600">
-            Household Composition: {user?.profile.household_composition}
+            Household Composition: {user?.profile?.household_composition}
           </p>
           {/* Add more economic information here */}
           <hr className="my-4" />
           <h3 className="text-xl font-bold mb-2">Other Information</h3>
           <p className="text-gray-600">
-            Health Status: {user?.profile.health_status}
+            Health Status: {user?.profile?.health_status}
           </p>
           <p className="text-gray-600">
-            Documentation Status: {user?.profile.documentation_status}
+            Documentation Status: {user?.profile?.documentation_status}
           </p>
           <p className="text-gray-600">
-            Protection Concerns: {user?.profile.protection_concerns}
+            Protection Concerns: {user?.profile?.protection_concerns}
           </p>
           <p className="text-gray-600">
-            Vulnerability Status: {user?.profile.vulnerability_status}
+            Vulnerability Status: {user?.profile?.vulnerability_status}
           </p>
           {/* Add more sections as needed */}
         </div>

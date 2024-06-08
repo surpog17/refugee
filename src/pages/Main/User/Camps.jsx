@@ -5,11 +5,19 @@ import { allApi } from "../../../api/endPoint";
 import { toast } from "react-toast";
 import NoRecordsFound from "../../../components/Main/NoRecorde";
 import Loading from "../../../components/Main/Loading";
+import DonationForm from "../RegistrationForm/Modal/DonationForm";
 
-export default function Camps() {
+export default function Camps({ userType }) {
   const [user, setUser] = useState("camps");
   const [data, setData] = useState(null);
+  const [create, setCreate] = useState(false);
+
   const [isLoading, setLoading] = useState(true);
+  const [provided_to, setProvidedTo] = useState(null);
+  const ShowDonation = (items) => {
+    setCreate(!create);
+    setProvidedTo(items?.id);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,7 +65,9 @@ export default function Camps() {
                   location={items?.actor_profile?.location}
                   to={`/${user}/${items?.id}`}
                   action={() => handleSubmit(items?.id, items?.is_active)}
+                  donationAction={() => ShowDonation(items)}
                   isActive={items?.is_active}
+                  userType={userType}
                 />
               ))}
             </div>
@@ -65,6 +75,9 @@ export default function Camps() {
             <NoRecordsFound />
           )}
         </div>
+      )}
+      {create && (
+        <DonationForm HandleCancel={ShowDonation} provided_to={provided_to} />
       )}
     </>
   );

@@ -12,6 +12,7 @@ import IDPTable from "../../pages/Main/CampIDP/Camps/IDPTable";
 import Complain from "../../pages/Main/CampIDP/Camps/Complain";
 import Home from "../../pages/Main/CampIDP/Camps/Home";
 import IDPDetail from "../../pages/Main/CampIDP/Camps/IDPDetail";
+import Reports from "../../pages/Main/HostIDP/Reports";
 export default function CampAdmin({ userType, user }) {
   // const [NotFoundPage, setNotFound] = useState(location?.pathname == "/404");
   // useEffect(() => {
@@ -30,7 +31,7 @@ export default function CampAdmin({ userType, user }) {
         </Route>
         <Route path="/messages" element={<>Message</>} />
         <Route path="/complain" element={<Complain user={user} />} />
-        <Route path="/report" element={<>Report</>} />
+        <Route path="/reports" element={<Reports />} />
         <Route path="/settings" element={<Profile />} />
       </Routes>
     </Layout>

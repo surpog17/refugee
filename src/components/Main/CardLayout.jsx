@@ -11,7 +11,11 @@ const CardLayout = ({
   to,
   action,
   isActive,
+  userType,
+  donationAction,
 }) => {
+  console.log(userType, "hhhh");
+
   return (
     <div className="flex flex-col items-center bg-gray-100 p-4">
       <div className="w-full ">
@@ -32,27 +36,45 @@ const CardLayout = ({
             <span className="block font-bold">{`${firstname} ${lastname}`}</span>
             <span className="text-gray-500">{location || "-"}</span>
           </div>
-          <div className="grid grid-cols-2 gap-5 text-sm">
+          <div
+            className={
+              userType === "NDRMC Admin" ? "grid grid-cols-2 gap-5 text-sm" : ""
+            }
+          >
             <NavLink
               to={to}
               className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
             >
               Detail
             </NavLink>
-            {isActive == false ? (
-              <button
-                onClick={() => action()}
-                className="w-full px-4 py-2 bg-[#45747e] text-white rounded-lg "
-              >
-                Activate
-              </button>
-            ) : (
-              <button
-                onClick={() => action()}
-                className="w-full px-4 py-2 bg-[#ea7128] text-white rounded-lg "
-              >
-                Deactivate
-              </button>
+            {userType === "NDRMC Admin" && (
+              <>
+                {isActive == false ? (
+                  <button
+                    onClick={() => action()}
+                    className="w-full px-4 py-2 bg-[#45747e] text-white rounded-lg "
+                  >
+                    Activate
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => action()}
+                    className="w-full px-4 py-2 bg-[#ea7128] text-white rounded-lg "
+                  >
+                    Deactivate
+                  </button>
+                )}
+              </>
+            )}
+            {userType == "Volunteer" && (
+              <>
+                <button
+                  onClick={() => donationAction()}
+                  className="w-full px-4 py-2 bg-[#45747e] text-white rounded-lg mt-4 "
+                >
+                  Donate
+                </button>
+              </>
             )}
           </div>
         </div>

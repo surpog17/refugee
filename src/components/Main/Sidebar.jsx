@@ -25,7 +25,7 @@ const Sidebar = ({ userType }) => {
 
   return (
     <div className="fixed w-[13.2rem] top-[4.4rem]">
-      <div className="bg-blue-800 text-white h-[35rem] flex flex-col py-5 overflow-x-hidden overflow-y-auto">
+      <div className="bg-blue-800 text-white h-screen  flex flex-col py-5 overflow-x-hidden overflow-y-auto">
         {/* <div className="flex items-center gap-2 justify-start w-full py-5 px-2">
           <FaHome className="text-white" size={24} />
           <span className="text-xl font-bold text-White">ERHMS</span>

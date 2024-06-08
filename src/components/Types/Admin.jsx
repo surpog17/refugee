@@ -20,7 +20,7 @@ import RegisterRefugee from "./../../pages/Main/User/RegisterRefugee";
 import Camps from "../../pages/Main/User/Camps";
 import IDPDetail from "../../pages/Main/CampIDP/Camps/IDPDetail";
 import CampDetail from "../../pages/Main/CampIDP/Camps/CampDetail";
-import HostDetail from "../../pages/Main/Host/HostDetail";
+import HostDetail from "../../pages/Main/HostIDP/HostDetail";
 import NGODetail from "../../pages/Main/NGO/NgoDetail";
 export default function AdminMenu({ userType, user }) {
   // const [NotFoundPage, setNotFound] = useState(location?.pathname == "/404");

@@ -1,6 +1,6 @@
 import { FaHome, FaUsers, FaBlog, FaCogs, FaSignOutAlt } from "react-icons/fa";
 import { LiaCampgroundSolid, LiaDonateSolid } from "react-icons/lia";
-import { MdDynamicFeed } from "react-icons/md";
+import { MdDynamicFeed, MdOutlineMessage } from "react-icons/md";
 import { GrCompliance } from "react-icons/gr";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 
@@ -45,20 +45,26 @@ export const Ipd = [
     text: "Feed & Story",
     icon: <MdDynamicFeed />,
   },
+
   {
-    to: "/users",
+    to: "/idps",
     text: "IDP Users",
     icon: <FaUsers />,
   },
   {
-    to: "/users",
-    text: "IDP Users",
-    icon: <FaUsers />,
+    to: "/messages",
+    text: "Messages",
+    icon: <MdOutlineMessage />,
   },
   {
-    to: "/settings",
-    text: "Settings",
-    icon: <FaCogs />,
+    to: "/complain",
+    text: "Complain",
+    icon: <GrCompliance />,
+  },
+  {
+    to: "/reports",
+    text: "Report",
+    icon: <HiOutlineDocumentReport />,
   },
 ];
 export const CampAdmin = [
@@ -78,7 +84,7 @@ export const CampAdmin = [
     icon: <GrCompliance />,
   },
   {
-    to: "/report",
+    to: "/reports",
     text: "Report",
     icon: <HiOutlineDocumentReport />,
   },
